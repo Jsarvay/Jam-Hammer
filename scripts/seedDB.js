@@ -10,7 +10,12 @@ mongoose.connect(
 
 const songSeed = [
   {
-    
+    title: "jam",
+    creator: "dude",
+    audio: "test",
+    genre: "test",
+    instrument: "guitar",
+    description: "stuff"
   }
 ];
 
