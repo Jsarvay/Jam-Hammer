@@ -4,6 +4,16 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const passport = require("passport");
+
+const User = require('./models/users');
+
+// use static authenticate method of model in LocalStrategy
+passport.use(User.createStrategy());
+
+// use static serialize and deserialize of model for passport session support
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -22,6 +32,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Connect to the Mongo DB
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/jamhammer");
 
 // Start the API server
