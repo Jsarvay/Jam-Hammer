@@ -1,13 +1,27 @@
 import React from "react";
+import { MenuItems } from "./MenuItems";
+import "./style.css";
 
-function Nav() {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a className="navbar-brand" href="/">
-        React Reading List
-      </a>
-    </nav>
-  );
+class Navbar extends React.Component {
+  render() {
+    return (
+      <nav className="NavbarItems">
+        <h1 className="navbar-logo">JamHammer</h1>
+        <div className="menu-icon"></div>
+        <ul>
+          {MenuItems.map((item, index) => {
+            return (
+              <li key={index}>
+                <a className={item.Cname} href={item.url}>
+                  {item.title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    );
+  }
 }
 
-export default Nav;
+export default Navbar;

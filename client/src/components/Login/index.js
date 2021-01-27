@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 function LoginForm() {
   return (
@@ -24,7 +25,5 @@ function LoginForm() {
     </form>
   );
 }
-
-
 
 export default LoginForm;
