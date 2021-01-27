@@ -1,12 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-import LoginForm from "./components/Login/index";
-import InputField from "./components/Login/inputfield";
-import SubmitButton from "./components/Login/submitbutton";
+import Recording from "./pages/Recording";
 
 function App() {
   return (
@@ -14,8 +11,8 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path={["/", "/books"]}>
-            <Books />
+          <Route exact path={["/"]}>
+            <Recording />
           </Route>
           <Route exact path="/books/:id">
             <Detail />
