@@ -1,5 +1,5 @@
 const express = require("express");
-
+const fileUpload = require("express-fileupload");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3001;
 const passport = require("passport");
 
 const User = require('./models/users');
+
 
 // use static authenticate method of model in LocalStrategy
 passport.use(User.createStrategy());
@@ -22,6 +23,10 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+app.use(fileUpload({
+  createParentPath: true
+}));
+
 // Add routes, both API and view
 app.use(routes);
 app.use(require('serve-static')(__dirname + '/../../public'));

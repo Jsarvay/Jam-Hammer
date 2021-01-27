@@ -28,8 +28,10 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
     "passport": "^0.4.1",
+    "aws-sdk": "^2.831.0",
     "passport-local-mongoose": "^6.1.0",
     "react-bootstrap": "^1.4.3",
-    "react-media-recorder": "^1.4.0"
+    "react-media-recorder": "^1.4.0",
+    "express-fileupload": "^1.2.1"
   }
 }
