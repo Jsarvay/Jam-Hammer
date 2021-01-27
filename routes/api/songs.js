@@ -1,11 +1,14 @@
 const router = require("express").Router();
 const songController = require("../../controllers/songController");
 const fs = require("fs");
+const path = require("path");
 
 function uploadFile(req, res){
   console.log(req.body);
   console.log(req.files);
-  fs.writeFileSync("uploads/bullshit.wav", req.files.data.data);
+  var filePath = path.join("/tmp", '/bullshit.wav');
+  fs.writeFileSync(filePath, req.files.data.data);
+  console.log("Saved to " + filePath);
   res.status(204).send({});
 }
 
