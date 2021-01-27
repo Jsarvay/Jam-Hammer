@@ -1,14 +1,14 @@
 import React from 'react';
-import Record from "../components/Record/index";
+import Upload from "../components/Upload/index";
 import { Col, Row, Container } from '../components/Grid';
 import API from '../utils/API';
 
-function Recording() {
+function Uploading() {
     return (
         <Container>
-        <Record />
+        <Upload />
         </Container>
     )
 }
 
-export default Recording;
+export default Uploading;
