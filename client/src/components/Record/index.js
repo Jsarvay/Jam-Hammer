@@ -12,7 +12,10 @@ function Record() {
           startRecording,
           stopRecording,
           mediaBlobUrl,
+          mediaRecorder
         } = useReactMediaRecorder({ audio: true });
+
+        
         
         async function Upload(ev){
             let blob = await fetch(mediaBlobUrl).then(r => r.blob());
