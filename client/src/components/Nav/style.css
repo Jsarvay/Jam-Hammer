@@ -1,14 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
+#title {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+h1 {
+  text-align: center;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  font-family: 'Fascinate Inline';
+  font-size: 8vw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+h1 span {
+  display: inline-block;
+}
+h1 span:nth-child(1) {
+  color: #01B7DE;
+}
+h1 span:nth-child(1):after {
+  content: '';
+  background: #01B7DE;
+  position: relative;
+  top: -0.1em;
+  width: 29vw;
+  height: 1em;
+  display: block;
+  border-radius: 5px;
+}
+h1 span:nth-child(3) {
+  color: #E97DB1;
+  letter-spacing: 0.18em;
+  position: relative;
+  top: -1.15em;
+  z-index: 2;
+  text-shadow: 1px 1px 1px #01B7DE, 0.2em 0.15em 0 #433C8A;
+}
+
 .NavbarItems {
   background: linear-gradient(
     90deg,
     rgb(110, 94, 254) 0%,
     rgba(73, 63, 252, 100%)
   );
-  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+}
+
+
+h3 {
+  color: hotpink;
 }
 
 .navbar-logo {

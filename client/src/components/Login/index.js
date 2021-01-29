@@ -1,12 +1,13 @@
 import React from "react";
+import { Col, Row, Container } from '../Grid';
 import "./index.css";
 
 function LoginForm() {
   return (
-    <form>
+    <Container className="form-color">
+    <form className="form-color">
       <div className="form-inner">
         <h2>Login</h2>
-        {/* ERROR! */}
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input type="text" name="name" id="name" />
@@ -23,6 +24,7 @@ function LoginForm() {
       </div>
       <input type="submit" value="LOGIN" />
     </form>
+    </Container>
   );
 }
 
