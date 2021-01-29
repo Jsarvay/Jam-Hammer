@@ -22,8 +22,20 @@ button {
 form {
   display: block;
   position: relative;
+  margin: 20px;
+  padding: 10px;
 }
-form::after {
+
+.form-color {
+  background-image: linear-gradient(
+    to bottom right,
+    #045ded,
+    #ff4df0,
+    #70ffdf,
+    #1d269b,
+    #9d4dff)
+}
+/*form::after {
   content: "";
   display: block;
   position: absolute;
@@ -40,4 +52,4 @@ form::after {
     #1d269b,
     #9d4dff
   );
-}
+}*/
