@@ -12,6 +12,8 @@ function Navigate() {
         <Nav className="ml-auto">
           <Nav.Link className="nav-links" href="/recording"><h3>Record</h3></Nav.Link>
           <Nav.Link className="nav-links" href="/upload"><h3>Upload</h3></Nav.Link>
+          <Nav.Link className="nav-links" href="/search"><h3>Search</h3></Nav.Link>
+          <Nav.Link className="nav-links" href="/user"><h3>Profile</h3></Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
