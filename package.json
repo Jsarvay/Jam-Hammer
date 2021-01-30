@@ -33,6 +33,7 @@
     "passport": "^0.4.1",
     "passport-local-mongoose": "^6.1.0",
     "react-bootstrap": "^1.4.3",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "jsonwebtoken": "8.5.1"
   }
 }
