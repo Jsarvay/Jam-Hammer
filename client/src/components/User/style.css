@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+
+.background-card {
+    background-image: linear-gradient(
+        to bottom right,
+        #045ded,
+        #ff4df0,
+        #70ffdf,
+        #1d269b,
+        #9d4dff);
+    padding: 20px;
+    margin: 20px;
+    box-shadow: black 5px 5px 5px;
+}
+
+.button-color {
+    background-color: black;
+    color: hotpink;
+    padding: 5px;
+    box-shadow: black 2px 2px 2px;
+    font-family: 'Fascinate', cursive;
+    border: black solid 2px;
+}
+
+.button-color:hover {
+    border: white solid 2px;
+}
+
+h4 {
+    font-family: 'Fascinate', cursive;
+}
+
+p {
+    font-family: 'Fascinate', cursive;
+}

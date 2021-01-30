@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+
 #title {
   position: absolute;
   width: 100%;
@@ -10,16 +11,18 @@ h1 {
   position: relative;
   display: table-cell;
   vertical-align: middle;
-  font-family: 'Fascinate Inline';
+  font-family: 'Fascinate', cursive;
   font-size: 8vw;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 h1 span {
   display: inline-block;
+  font-family: 'Fascinate', cursive;
 }
 h1 span:nth-child(1) {
   color: #01B7DE;
+  font-family: 'Fascinate', cursive;
 }
 h1 span:nth-child(1):after {
   content: '';
@@ -30,6 +33,7 @@ h1 span:nth-child(1):after {
   height: 1em;
   display: block;
   border-radius: 5px;
+  font-family: 'Fascinate', cursive;
 }
 h1 span:nth-child(3) {
   color: #E97DB1;
@@ -38,6 +42,7 @@ h1 span:nth-child(3) {
   top: -1.15em;
   z-index: 2;
   text-shadow: 1px 1px 1px #01B7DE, 0.2em 0.15em 0 #433C8A;
+  font-family: 'Fascinate', cursive;
 }
 
 .NavbarItems {
@@ -54,6 +59,7 @@ h1 span:nth-child(3) {
 
 h3 {
   color: hotpink;
+  font-family: 'Fascinate', cursive;
 }
 
 .navbar-logo {
@@ -77,6 +83,7 @@ h3 {
   color: hotpink;
   text-decoration: none;
   page-break-after: 0.5rem 1 rem;
+  font-family: 'Fascinate', cursive;
 }
 
 .nav-links:hover {

@@ -5,6 +5,8 @@ import Nav from "./components/Nav";
 import Recording from "./pages/Recording";
 import Uploading from "./pages/Uploading";
 import Login from "./pages/Login";
+import Userpage from "./pages/Userpage";
+import Search from "./pages/Search";
 import "./style.css";
 
 function App() {
@@ -21,6 +23,12 @@ function App() {
           </Route>
           <Route exact path="/recording">
             <Recording />
+          </Route>
+          <Route exact path="/user">
+            <Userpage />
+          </Route>
+          <Route exact path="/search">
+            <Search />
           </Route>
           <Route>
             <NoMatch />
