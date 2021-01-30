@@ -1,7 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+
+#title {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+h1 {
+  text-align: center;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  font-family: 'Fascinate', cursive;
+  font-size: 8vw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+h1 span {
+  display: inline-block;
+  font-family: 'Fascinate', cursive;
+}
+h1 span:nth-child(1) {
+  color: #01B7DE;
+  font-family: 'Fascinate', cursive;
+}
+h1 span:nth-child(1):after {
+  content: '';
+  background: #01B7DE;
+  position: relative;
+  top: -0.1em;
+  width: 29vw;
+  height: 1em;
+  display: block;
+  border-radius: 5px;
+  font-family: 'Fascinate', cursive;
+}
+h1 span:nth-child(3) {
+  color: #E97DB1;
+  letter-spacing: 0.18em;
+  position: relative;
+  top: -1.15em;
+  z-index: 2;
+  text-shadow: 1px 1px 1px #01B7DE, 0.2em 0.15em 0 #433C8A;
+  font-family: 'Fascinate', cursive;
+}
+
 .NavbarItems {
   background: linear-gradient(
     90deg,
     rgb(110, 94, 254) 0%,
     rgba(73, 63, 252, 100%)
   );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+h3 {
+  color: hotpink;
+  font-family: 'Fascinate', cursive;
+}
+
+.navbar-logo {
+  color: white;
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: grid;
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  justify-content: end;
+  margin-right: 2rem;
+}
+
+.nav-links {
+  color: hotpink;
+  text-decoration: none;
+  page-break-after: 0.5rem 1 rem;
+  font-family: 'Fascinate', cursive;
+}
+
+.nav-links:hover {
+  background-color: white;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+
+.fa-bars {
+  color: white;
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
 }

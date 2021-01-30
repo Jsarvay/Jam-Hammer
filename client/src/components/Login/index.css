@@ -2,10 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: montserrat, sans-serif;
+  font-family: 'Fascinate', cursive;
 }
 
-input,
+h2 {
+  font-family: 'Fascinate', cursive;
+}
+
 button {
   appearance: none;
   background: none;
@@ -22,22 +25,16 @@ button {
 form {
   display: block;
   position: relative;
+  margin: 20px;
+  padding: 10px;
 }
-form::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  z-index: 1;
+
+.form-color {
   background-image: linear-gradient(
     to bottom right,
     #045ded,
     #ff4df0,
     #70ffdf,
     #1d269b,
-    #9d4dff
-  );
+    #9d4dff)
 }

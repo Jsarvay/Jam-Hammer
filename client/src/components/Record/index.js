@@ -45,10 +45,11 @@ function Record() {
                             </div>
                         </Row>
                         <Row>
-                            <div className="col-nd-12">
-                                <button onClick={startRecording}>Record</button>
-                                <button onClick={stopRecording}>Stop</button>
-                                <button onClick={Upload}>Upload</button>
+                            <div className="col-md-4"></div>
+                            <div className="col-md-4">
+                                <button className="button-color" onClick={startRecording}>Record</button>
+                                <button className="button-color" onClick={stopRecording}>Stop</button>
+                                <button className="button-color" onClick={Upload}>Upload</button>
                             </div>
                         </Row>
                     </Jumbotron>
