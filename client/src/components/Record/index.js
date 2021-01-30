@@ -27,7 +27,6 @@ WaveSurfer.microphone = MicrophonePlugin;
 
 
 class RecordComp extends Component {
-    
 
     componentDidMount() {
         // instantiate Video.js
@@ -54,6 +53,7 @@ class RecordComp extends Component {
             // recordedData is a blob object containing the recorded data that
             // can be downloaded by the user, stored on server etc.
             console.log('finished recording: ', this.player.recordedData);
+
         });
 
         // error handling
@@ -64,28 +64,46 @@ class RecordComp extends Component {
         this.player.on('deviceError', () => {
             console.error('device error:', this.player.deviceErrorCode);
         });
+
     }
 
-    render(){
+    Upload = (ev) => {
+        let blob = this.player.recordedData;
+        var fd = new FormData();
+        fd.append('fname', "Bullshit.ogg");
+        fd.append('data', blob);
+        axios({
+            method: 'post',
+            url: '/api/song',
+            data: fd,
+            processData: false,
+            contentType: false
+        }).then(function (data) {
+            console.log(data);
+        });
+    }
+
+    render() {
         return (
-        <Container fluid>
-            <Row>
-                <Col size="md-12">
-                    <Jumbotron>
-                        <Row>
-                            <div className="col-md-12">
+            <Container fluid>
+                <Row>
+                    <Col size="md-12">
+                        <Jumbotron>
+                            <Row>
+                                <div className="col-md-12">
                                     <video id="myVideo" ref={node => this.videoNode = node} className="video-js vjs-default-skin" playsInline></video>
-                            </div>
-                        </Row>
-                        <Row>
-                            <div className="col-md-4"></div>
-                            <div className="col-md-4">
-                            </div>
-                        </Row>
-                    </Jumbotron>
-                </Col>
-            </Row>
-        </Container>
+                                </div>
+                            </Row>
+                            <Row>
+                                <div className="col-md-4"></div>
+                                <button className="button-color" onClick={this.Upload}>Upload</button>
+                                <div className="col-md-4">
+                                </div>
+                            </Row>
+                        </Jumbotron>
+                    </Col>
+                </Row>
+            </Container>
         );
     };
 };
