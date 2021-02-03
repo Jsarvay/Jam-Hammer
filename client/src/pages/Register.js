@@ -1,5 +1,5 @@
 import React from 'react';
-import Register from '../components/Register';
+import Register from '../components/Register/register';
 import { Col, Row, Container } from '../components/Grid';
 import API from '../utils/API';
 
