@@ -26,6 +26,10 @@ function login(req,res){
                 result: "success"
             };
             res.json(sendBack);
+        }else{
+            console.log("error authenticating user: " + username);
+            var sendBack = { result: "fail", reason: "bad username or password" };
+            res.json(sendBack);
         }
         // Value 'result' is set to false. The user could not be authenticated since the user is not active
     });
