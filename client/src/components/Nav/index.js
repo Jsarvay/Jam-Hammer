@@ -4,7 +4,7 @@ import './style.css';
 
 function Navigate() {
   return (
-    <Navbar className="nav-bg" collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar className="nav-bg" collapseOnSelect expand="lg" variant="dark">
       <Navbar.Brand className="title" href="/">
         <h1>
           <span>jam</span>
