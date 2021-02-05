@@ -1,9 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import { Col, Row, Container } from '../Grid';
 import {Card} from "react-bootstrap";
 import "./style.css";
 
-function Searching() {
+class Searching extends Component {
+
+    state = {
+        search: "",
+        songs: [],
+        filter: []
+      };
+
+    /*componentDidMount() {
+        API.getSongs()
+        .then(res => this.setState({ songs: res.data.results }))
+        .catch(err => console.log(err));
+      };*/
+
+    handleInputChange = event => {
+        this.setState({search: event.target.value});
+    }
+
+    render(){
     return (
         <Container fluid>
         <div className="form-group">
@@ -12,7 +30,8 @@ function Searching() {
                 name="search"
                 type="text"
                 placeholder="search"
-                className="form-control">
+                className="form-control"
+                onChange={this.handleInputChange}>
                 </input>
                 <button className="button-color">Search</button>
             </form>
@@ -45,7 +64,7 @@ function Searching() {
             </Col>
         </Row>
         </Container>
-    )
+    )}
 }
 
 export default Searching;

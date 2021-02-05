@@ -1,9 +1,9 @@
 import React from 'react';
-import Register from '../components/Register/register.jsx';
+import Register from '../components/Register/register';
 import { Col, Row, Container } from '../components/Grid';
 import API from '../utils/API';
 
-function Login() {
+function register() {
   return (
     <Container>
       <Register />
@@ -11,4 +11,5 @@ function Login() {
   );
 }
 
-export default Register;
+// export default Register;
+export default register;

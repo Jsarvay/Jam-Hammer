@@ -84,6 +84,7 @@ class RecordComp extends Component {
     }
 
     render() {
+
         return (
             <Container fluid>
                 <Row>
@@ -95,10 +96,7 @@ class RecordComp extends Component {
                                 </div>
                             </Row>
                             <Row>
-                                <div className="col-md-4"></div>
-                                <button className="button-color" onClick={this.Upload}>Upload</button>
-                                <div className="col-md-4">
-                                </div>
+                                <button className="button-color button-width" onClick={this.Upload}>Upload</button>
                             </Row>
                         </Jumbotron>
                     </Col>
