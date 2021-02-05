@@ -33,10 +33,10 @@ function uploadFile(req, res){
       console.log("Error", err);
     } if (data) {
       console.log("Upload Success", data.Location);
+      
     }
   });
-  
-  res.status(204).send({});
+
 }
 
 // Matches with "/api/song"
