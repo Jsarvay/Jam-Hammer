@@ -2,8 +2,6 @@
 
 #title {
   position: absolute;
-  width: 100%;
-  height: 100%;
   display: table;
 }
 h1 {
@@ -12,7 +10,7 @@ h1 {
   display: table-cell;
   vertical-align: middle;
   font-family: 'Fascinate', cursive;
-  font-size: 8vw;
+  font-size: 16pt;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -47,6 +45,14 @@ h1 span:nth-child(3) {
 
 .nav-bg {
   background-color: black;
+  border: 10px solid;
+  border-image-source: linear-gradient(to bottom right,
+  #045ded,
+  #ff4df0,
+  #70ffdf,
+  #1d269b,
+  #9d4dff);
+  border-image-slice: 1;
 }
 
 h3 {
