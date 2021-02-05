@@ -9,7 +9,10 @@ const videoJsOptions = {
     bigPlayButton: false,
     width: 320,
     height: 240,
-    fluid: false,
+    fluid: true,
+    controlBar: {
+        fullscreenToggle: false
+    },
     plugins: {
         
         // wavesurfer section is only needed when recording audio-only
