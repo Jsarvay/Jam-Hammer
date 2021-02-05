@@ -34,12 +34,13 @@ class Register extends Component {
     console.log(this.state);
     API.registerUser(this.state)        
     .then( (response) => {
-      if (response.data.results === "success") {
-        let token = response.data.token;
+      console.log(response);
+      if (response.data.result === "success") {
+        var token = response.data.token;
         console.log(token);
         localStorage.setItem("SavedToken", 'Bearer ' + token);
-        axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
-        (this.$router.push({name:'HomePage'}));
+        console.log(localStorage.getItem("SavedToken"));
+        //this.$router.push({name:'HomePage'});
       }
       else {
         console.log(response.data.reason)
