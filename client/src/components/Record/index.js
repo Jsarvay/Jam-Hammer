@@ -109,10 +109,12 @@ class RecordComp extends Component {
         fd.append('genre', this.state.genre);
         fd.append('instrument', this.state.instrument);
         fd.append('description', this.state.description);
+        fd.append('jwt', )
         axios({
             method: 'post',
             url: '/api/song',
             data: fd,
+            headers: {Authorization: localStorage.getItem('SavedToken')},
             processData: false,
             contentType: false
         }).then(function (data) {

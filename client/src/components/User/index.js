@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import { Col, Row, Container } from '../Grid';
 import Jumbotron from '../Jumbotron';
 import {Card} from "react-bootstrap";
 import "./style.css";
 
-function User() {
+class User extends Component {
+
+    render() {
     return (
         <Container fluid>
         <Row>
@@ -51,6 +53,6 @@ function User() {
         </Row>
     </Container>
     )
-}
+}};
 
 export default User;
