@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const songController = require("../../controllers/songController");
+const songDb = require("../../models/song");
 const fs = require("fs");
 var path = require("path");
 const { v4: uuidv4 } = require('uuid');
@@ -35,7 +36,14 @@ function uploadFile(req, res) {
         console.log("Error", err);
       } if (data) {
         console.log("Upload Success", data.Location);
-
+        songDb.create({
+          title: req.body.title,
+          creator: user._id,
+          audio: data.Location,
+          genre: req.body.genre,
+          instrument: req.body.instrument,
+          description: req.body.description
+        });
       }
     });
   }).catch((reason)=>{

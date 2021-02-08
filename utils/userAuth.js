@@ -24,7 +24,11 @@ module.exports = {
             }
             console.log(decoded);
             usersModel.findById(decoded.userId).then((userFound) => {
-                resolvedFunc(userFound);
+                if(userFound != null){
+                    resolvedFunc(userFound);
+                }else{
+                    errFunc("USER_NOT_REAL");
+                }
             });
         });
         return returnPromise;
