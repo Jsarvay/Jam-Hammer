@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Row, Container } from '../Grid';
 import {Card} from "react-bootstrap";
+import Song from "../Song/index";
 import "./style.css";
 
 class Searching extends Component {
@@ -11,12 +12,12 @@ class Searching extends Component {
         filter: []
       };
 
-    /*componentDidMount() {
-        API.getSongs()
+    componentDidMount() {
+        API.getSongs().populate("user")
         .then(res => this.setState({ songs: res.data.results }))
         .catch(err => console.log(err))
         .then(this.setState({filter: songs.slice([0], [9])}));
-      };*/
+      };
 
     handleSearch = event => {
         event.preventDefault();
@@ -48,32 +49,19 @@ class Searching extends Component {
             </form>
         </div>
 
-        <Row>
-            <Col size="md-12">
-            <Card className="background-card">
-                <Card.Body>
-                    <audio></audio>
-                    <Card.Title><p>Jam Name</p></Card.Title>
-                    <Card.Text>
-                        <p>Instrument: </p>
-                    </Card.Text>
-                    <Card.Text>
-                        <p>Genre: </p>
-                    </Card.Text>
-                    <Card.Text>
-                        <p>Description: </p>
-                    </Card.Text>
-                    <Card.Text>
-                        <p>Downloads: </p>
-                    </Card.Text>
-                    <Card.Text>
-                        <p>Likes: </p>
-                    </Card.Text>
-                    <button className="button-color">Jam to this!</button>
-                </Card.Body>
-            </Card>
-            </Col>
-        </Row>
+        {this.state.filter.map(song => (
+          <Song 
+          key={song.id}
+          title={song.title}
+          creator={song.creator}
+          audio={song.audio}
+          genre={song.genre}
+          instrument={song.instrument}
+          description={song.description}
+          download={song.download}
+          likes={song.likes}
+          />
+        ))}
         </Container>
     )}
 }
