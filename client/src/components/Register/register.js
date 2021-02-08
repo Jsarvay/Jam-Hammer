@@ -7,14 +7,14 @@ import './style.css';
 class Register extends Component {
   
   state = {
-    first: "",
+    realName: "",
     username: "",
     email: "",
     password: ""
   }
 
   handleNameChange = event => {
-    this.setState({first: event.target.value})
+    this.setState({realName: event.target.value})
   };
 
   handleUserChange = event => {
@@ -54,8 +54,8 @@ class Register extends Component {
       <h3>Sign Up</h3>
 
       <div className="form-group">
-        <label>First name</label>
-        <input type="text" className="form-control" placeholder="First name" onChange={this.handleNameChange} />
+        <label>Name</label>
+        <input type="text" className="form-control" placeholder="Name" onChange={this.handleNameChange} />
       </div>
 
       <div className="form-group">
@@ -87,7 +87,7 @@ class Register extends Component {
         Sign Up
       </button>
       <p className="forgot-password text-right">
-        Already registered <a href="#">sign in?</a>
+        Already registered <a href="/">sign in?</a>
       </p>
     </form>
   );

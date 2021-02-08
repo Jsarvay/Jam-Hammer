@@ -14,12 +14,23 @@ class Searching extends Component {
     /*componentDidMount() {
         API.getSongs()
         .then(res => this.setState({ songs: res.data.results }))
-        .catch(err => console.log(err));
+        .catch(err => console.log(err))
+        .then(this.setState({filter: songs.slice([0], [9])}));
       };*/
+
+    handleSearch = event => {
+        event.preventDefault();
+        const filtered = this.state.songs.filter(song => song.title.includes(this.state.search)
+        || song.creator.includes(this.state.search)
+        || song.genre.includes(this.state.search)
+        || song.instrument.includes(this.state.search));
+        console.log(filtered)
+        this.setState({ filter: filtered });
+    };
 
     handleInputChange = event => {
         this.setState({search: event.target.value});
-    }
+    };
 
     render(){
     return (
