@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Col, Row, Container } from '../Grid';
 import {Card} from "react-bootstrap";
 import Song from "../Song/index";
+import API from "../../utils/API";
 import "./style.css";
 
 class Searching extends Component {
@@ -13,10 +14,10 @@ class Searching extends Component {
       };
 
     componentDidMount() {
-        API.getSongs().populate("user")
+        API.getSongs()
         .then(res => this.setState({ songs: res.data.results }))
-        .catch(err => console.log(err))
-        .then(this.setState({filter: songs.slice([0], [9])}));
+        .then(this.setState({filter: songs}))
+        .catch(err => console.log(err));
       };
 
     handleSearch = event => {
