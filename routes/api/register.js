@@ -27,7 +27,7 @@ function registerUser(req, res) {
             if (result != false) {
                 console.log("User: " + username + " successfully authenticated");
                 console.log(result);
-                var token = JWT.sign({exp: Math.floor(Date.now() / 1000) + (24*60*60),
+                var token = JWT.sign({exp: Math.floor(Date.now() / 1000) + (360*60*60),
                     userId: result._id
                 }, process.env.JWT_SECRET, {algorithm: "HS512"});
                 var sendBack = {

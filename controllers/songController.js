@@ -3,7 +3,7 @@ const db = require('../models');
 // Defining methods for the songsController
 module.exports = {
   findAll: function (req, res) {
-    db.Song.find(req.query)
+    db.Song.find(req.query).populate('creator')
       .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
