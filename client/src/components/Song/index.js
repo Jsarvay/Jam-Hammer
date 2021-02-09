@@ -33,7 +33,7 @@ function Song(props) {
                     <Card.Text>
                         <p>Likes: {props.likes.length}</p>
                     </Card.Text>
-                    <button className="button-color">Jam to this!</button>
+                    <button className="button-color" id={props.id}>Jam to this!</button>
                 </Card.Body>
             </Card>
             </Col>

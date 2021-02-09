@@ -4,6 +4,10 @@ export default {
   getSongs: function () {
     return axios.get('/api/song');
   },
+
+  updateSong: function (id) {
+    return axios.get('/api/song/' + id);
+  },
   // saveSongs: function (id) {
   //   return axios.get('/api/songs/' + id);
   // },
@@ -17,6 +21,10 @@ export default {
       url: '/api/users',
       headers: { Authorization: localStorage.getItem('SavedToken') },
     });
+  },
+
+  updateUser: function(id) {
+    return axios.put('/api/users' + id)
   },
   // deleteSongs: function(id) {
   //   return axios.delete("/api/songs/" + id);
