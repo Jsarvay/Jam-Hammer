@@ -65,6 +65,15 @@ function uploadFile(req, res) {
 
 }
 
+function addLike(req, res){
+  authUtil.authUser(req).then((user)=>{
+    songDb.updateOne({_id: req.params.id}, {$push: { likes: user._id}}).then((doc)=>{
+      console.log(doc);
+      res.json(doc);
+    });
+  });
+}
+
 // Matches with "/api/song"
 router.route("/")
   .get(songController.findAll)
@@ -73,8 +82,8 @@ router.route("/")
 // Matches with "/api/song/:id"
 router
   .route("/:id")
-  .get(songController.findById)
-  .put(songController.update)
-  .delete(songController.remove);
-
+  .get(songController.findById);
+ 
+router.route("/like/:id").put(addLike);
+  
 module.exports = router;
