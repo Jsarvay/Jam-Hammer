@@ -1,16 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Col, Row, Container } from '../Grid';
 import {Card} from "react-bootstrap";
+import ReactWebMediaPlayer from 'react-web-media-player';
 import "./style.css";
 
 function Song(props) {
+
+    let link = "/user/" + props.id;
+
     return (
         <Row>
             <Col size="md-12">
             <Card className="background-card">
                 <Card.Body>
-                    <audio src={props.audio}></audio>
+                    <ReactWebMediaPlayer
+                    audio={props.audio} />
                     <Card.Title><p>{props.title}</p></Card.Title>
+                    <Card.Text>
+                        <p>Creator: <a href={link}>{props.creator}</a></p>
+                    </Card.Text>
                     <Card.Text>
                         <p>Instrument: {props.instrument}</p>
                     </Card.Text>

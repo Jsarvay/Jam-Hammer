@@ -21,7 +21,8 @@ const User = new Schema({
     profilePicture: {
         type:String,
         default: "b0383d76-a9c6-482e-80a1-38bc4bc772ec"
-    } 
+    },
+    songs: [{ type: Schema.Types.ObjectId, ref: 'Song' }]
 });
 
 User.plugin(passportLocalMongoose);
