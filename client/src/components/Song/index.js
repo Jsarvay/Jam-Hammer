@@ -12,6 +12,9 @@ function Song(props) {
                     <audio src={props.audio}></audio>
                     <Card.Title><p>{props.title}</p></Card.Title>
                     <Card.Text>
+                        <p>Creator: <a href={props.id}>{props.creator}</a></p>
+                    </Card.Text>
+                    <Card.Text>
                         <p>Instrument: {props.instrument}</p>
                     </Card.Text>
                     <Card.Text>

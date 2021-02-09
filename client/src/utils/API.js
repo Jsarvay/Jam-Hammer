@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default {
   getSongs: function () {
-    return axios.get('/api/songs');
+    return axios.get('/api/song');
   },
   // saveSongs: function (id) {
   //   return axios.get('/api/songs/' + id);

@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
+import {useParams} from "react-router-dom";
 import { Col, Row, Container } from '../Grid';
 import Jumbotron from '../Jumbotron';
 import {Card} from "react-bootstrap";
+import API from "../../utils/API";
 import "./style.css";
 
 class User extends Component {
+
+    state = {
+        user: []
+    };
+
+
+    componentDidMount() {
+        API.getUser(window.location.pathname)
+        .then((res) => {
+            this.setState({ user: res.data })
+        }
+        )
+        .catch(err => console.log(err));
+      };
 
     render() {
     return (
@@ -12,9 +28,9 @@ class User extends Component {
         <Row>
             <Col size="md-4">
                 <Card className="background-card">
-                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Img variant="top" src={this.state.user.profilePicture} />
                     <Card.Body>
-                    <Card.Title><h4>Username</h4></Card.Title>
+                    <Card.Title><h4>{this.state.user.username}</h4></Card.Title>
                     </Card.Body>
                 </Card>
             </Col>

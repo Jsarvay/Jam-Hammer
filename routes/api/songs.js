@@ -18,7 +18,7 @@ function uploadFile(req, res) {
     console.log(req.body);
     console.log(req.files);
     var file = uuidv4() + ".wav";
-    var filePath = path.join("/tmp", file);
+    var filePath = path.join("C:/Users/Jordan Sarvay/Desktop/Jam Hammer/Jam-Hammer", "/samples", file);
     fs.writeFileSync(filePath, req.files.data.data);
     console.log("Saved to " + filePath);
 
@@ -43,7 +43,13 @@ function uploadFile(req, res) {
           genre: req.body.genre,
           instrument: req.body.instrument,
           description: req.body.description
-        });
+        }).then((doc)=>{
+          if(doc != null){
+            res.json(doc);
+          }else{
+            res.json({"result": "fail", "reason": "failed to add to database"});
+          }
+        });;
       }
     });
   }).catch((reason)=>{
