@@ -34,6 +34,7 @@ function uploadFile(req, res) {
     s3.upload(uploadParams, function (err, data) {
       if (err) {
         console.log("Error", err);
+        res.json({ "result": "fail", "reason": "failed to upload to S3" });
       } if (data) {
         console.log("Upload Success", data.Location);
         songDb.create({
@@ -43,6 +44,12 @@ function uploadFile(req, res) {
           genre: req.body.genre,
           instrument: req.body.instrument,
           description: req.body.description
+        }).then((doc)=>{
+          if(doc != null){
+            res.json(doc);
+          }else{
+            res.json({"result": "fail", "reason": "failed to add to database"});
+          }
         });
       }
     });
