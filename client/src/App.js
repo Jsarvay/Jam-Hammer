@@ -29,7 +29,7 @@ function App() {
           <Route exact path="/recording">
             <Recording />
           </Route>
-          <Route exact path="/user/:id">
+          <Route path="/user">
             <Userpage />
           </Route>
           <Route exact path="/search">
