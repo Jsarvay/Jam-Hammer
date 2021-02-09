@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const songController = require("../../controllers/songController");
 const songDb = require("../../models/song");
+const userDb = require("../../models/users");
 const fs = require("fs");
 var path = require("path");
 const { v4: uuidv4 } = require('uuid');
@@ -47,6 +48,7 @@ function uploadFile(req, res) {
         }).then((doc)=>{
           if(doc != null){
             res.json(doc);
+            // userDb.updateOne({_id: user._id}, {$push: song})
           }else{
             res.json({"result": "fail", "reason": "failed to add to database"});
           }
