@@ -10,6 +10,14 @@ export default {
   getUser: function (id) {
     return axios.get('/api/users/' + id);
   },
+
+  getCurrentUser: function () {
+    return axios({
+      method: 'get',
+      url: '/api/users',
+      headers: { Authorization: localStorage.getItem('SavedToken') },
+    });
+  },
   // deleteSongs: function(id) {
   //   return axios.delete("/api/songs/" + id);
   // },

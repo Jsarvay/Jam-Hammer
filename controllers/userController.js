@@ -3,14 +3,13 @@ const db = require('../models');
 // Defining methods for the userController
 module.exports = {
   findAll: function (req, res) {
-    db.User.find(req.query)
+    db.User.find(req.query).populate('songs')
       .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
-    console.log(req.params.id);
-    db.User.findById(req.params.id)
+    db.User.findById(req.params.id).populate('songs')
       .then((dbModel) => {
         console.log(dbModel);
         res.json(dbModel)

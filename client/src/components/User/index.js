@@ -16,14 +16,20 @@ class User extends Component {
 
     componentDidMount() {
         let id = window.location.pathname.substring(6)
-        API.getUser(id)
-        .then((res) => {
-            this.setState({ user: res.data })
-            this.setState({ profilePicture: "https://jamhammer.s3.amazonaws.com/ProfilePictures/" + res.data.profilePicture + ".png"})
-            console.log(res)
+        if(id == ""){
+            API.getCurrentUser().then((res) => {
+                console.log(res);
+                this.setState({ user: res.data })
+                this.setState({ profilePicture: "https://jamhammer.s3.amazonaws.com/ProfilePictures/" + res.data.profilePicture + ".png" })
+                console.log(res)
+            });
+        }else{
+            API.getUser(id).then((res) => {
+                this.setState({ user: res.data })
+                this.setState({ profilePicture: "https://jamhammer.s3.amazonaws.com/ProfilePictures/" + res.data.profilePicture + ".png" })
+                console.log(res)
+            });
         }
-        )
-        .catch(err => console.log(err));
       };
 
     render() {
