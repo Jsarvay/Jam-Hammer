@@ -9,7 +9,6 @@ function Search() {
     <Fragment>
       <Nav />
       <Container>
-        <Nav />
         <Searching />
       </Container>
     </Fragment>

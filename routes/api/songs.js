@@ -19,7 +19,7 @@ function uploadFile(req, res) {
     console.log(req.body);
     console.log(req.files);
     var file = uuidv4() + ".wav";
-    var filePath = path.join("/tmp", file);
+    var filePath = path.join("C:/Users/Jordan Sarvay/Desktop/Jam Hammer/Jam-Hammer", "/samples", file);
     fs.writeFileSync(filePath, req.files.data.data);
     console.log("Saved to " + filePath);
 

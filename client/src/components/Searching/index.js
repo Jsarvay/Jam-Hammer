@@ -15,15 +15,17 @@ class Searching extends Component {
 
     componentDidMount() {
         API.getSongs()
-        .then(res => this.setState({ songs: res.data.results }))
-        .then(this.setState({filter: songs}))
+        .then((res) => {
+            this.setState({ songs: res.data, filter: res.data })
+        }
+        )
         .catch(err => console.log(err));
       };
 
     handleSearch = event => {
         event.preventDefault();
         const filtered = this.state.songs.filter(song => song.title.includes(this.state.search)
-        || song.creator.includes(this.state.search)
+        || song.creator.username.includes(this.state.search)
         || song.genre.includes(this.state.search)
         || song.instrument.includes(this.state.search));
         console.log(filtered)
@@ -46,7 +48,7 @@ class Searching extends Component {
                 className="form-control"
                 onChange={this.handleInputChange}>
                 </input>
-                <button className="button-color">Search</button>
+                <button className="button-color" onClick={this.handleSearch}>Search</button>
             </form>
         </div>
 
@@ -54,7 +56,8 @@ class Searching extends Component {
           <Song 
           key={song.id}
           title={song.title}
-          creator={song.creator}
+          creator={song.creator.username}
+          id={song.creator._id}
           audio={song.audio}
           genre={song.genre}
           instrument={song.instrument}
