@@ -1,22 +1,23 @@
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  getBooks: function() {
-    return axios.get("/api/books");
+  getSongs: function () {
+    return axios.get('/api/songs');
   },
-  getBook: function(id) {
-    return axios.get("/api/books/" + id);
+  // saveSongs: function (id) {
+  //   return axios.get('/api/songs/' + id);
+  // },
+  getUser: function (id) {
+    return axios.get('/api/user/' + id);
   },
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+  // deleteSongs: function(id) {
+  //   return axios.delete("/api/songs/" + id);
+  // },
+
+  registerUser: function (userData) {
+    return axios.post('/api/register', userData);
   },
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
-  },
-  registerUser: function(userData) {
-    return axios.post("/api/register", userData);
-  },
-  loginUser: function(loginData) {
-    return axios.post("/api/login", loginData);
+  loginUser: function (loginData) {
+    return axios.post('/api/login', loginData);
   }
 };

@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { Col, Row, Container } from '../components/Grid';
 import { List, ListItem } from '../components/List';
 import { Input, TextArea, FormBtn } from '../components/Form';
+import { Fragment } from 'react';
+import Nav from '../components/Nav';
 
 function Songs() {
   // Setting our component's initial state
@@ -59,59 +61,62 @@ function Songs() {
   }
 
   return (
-    <Container fluid>
-      <Row>
-        <Col size="md-6">
-          <Jumbotron>
-            <h1>What Songs Should I Check Out?</h1>
-          </Jumbotron>
-          <form>
-            <Input
-              onChange={handleInputChange}
-              name="title"
-              placeholder="Title (required)"
-            />
-            <Input
-              onChange={handleInputChange}
-              name="creator"
-              placeholder="Creator (required)"
-            />
-            <TextArea
-              onChange={handleInputChange}
-              name="description"
-              placeholder="Description (Optional)"
-            />
-            <FormBtn
-              disabled={!(formObject.creator && formObject.title)}
-              onClick={handleFormSubmit}
-            >
-              Submit Song
-            </FormBtn>
-          </form>
-        </Col>
-        <Col size="md-6 sm-12">
-          <Jumbotron>
-            <h1>Songs On My List</h1>
-          </Jumbotron>
-          {songs.length ? (
-            <List>
-              {songs.map((song) => (
-                <ListItem key={song._id}>
-                  <Link to={'/songs/' + song._id}>
-                    <strong>
-                      {song.title} by {song.creator}
-                    </strong>
-                  </Link>
-                  <DeleteBtn onClick={() => deleteSong(song._id)} />
-                </ListItem>
-              ))}
-            </List>
-          ) : (
-            <h3>No Results to Display</h3>
-          )}
-        </Col>
-      </Row>
-    </Container>
+    <Fragment>
+      <Nav />
+      <Container fluid>
+        <Row>
+          <Col size="md-6">
+            <Jumbotron>
+              <h1>What Songs Should I Check Out?</h1>
+            </Jumbotron>
+            <form>
+              <Input
+                onChange={handleInputChange}
+                name="title"
+                placeholder="Title (required)"
+              />
+              <Input
+                onChange={handleInputChange}
+                name="creator"
+                placeholder="Creator (required)"
+              />
+              <TextArea
+                onChange={handleInputChange}
+                name="description"
+                placeholder="Description (Optional)"
+              />
+              <FormBtn
+                disabled={!(formObject.creator && formObject.title)}
+                onClick={handleFormSubmit}
+              >
+                Submit Song
+              </FormBtn>
+            </form>
+          </Col>
+          <Col size="md-6 sm-12">
+            <Jumbotron>
+              <h1>Songs On My List</h1>
+            </Jumbotron>
+            {songs.length ? (
+              <List>
+                {songs.map((song) => (
+                  <ListItem key={song._id}>
+                    <Link to={'/songs/' + song._id}>
+                      <strong>
+                        {song.title} by {song.creator}
+                      </strong>
+                    </Link>
+                    <DeleteBtn onClick={() => deleteSong(song._id)} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
+          </Col>
+        </Row>
+      </Container>
+    </Fragment>
   );
 }
 
