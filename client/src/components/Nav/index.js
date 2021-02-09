@@ -15,9 +15,6 @@ function Navigate() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link className="nav-links" href="/register">
-            <h3>Signup</h3>
-          </Nav.Link>
           <Nav.Link className="nav-links" href="/recording">
             <h3>Record</h3>
           </Nav.Link>

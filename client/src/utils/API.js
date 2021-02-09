@@ -8,7 +8,7 @@ export default {
   //   return axios.get('/api/songs/' + id);
   // },
   getUser: function (id) {
-    return axios.get('/api/user/' + id);
+    return axios.get('/api/users/' + id);
   },
   // deleteSongs: function(id) {
   //   return axios.delete("/api/songs/" + id);

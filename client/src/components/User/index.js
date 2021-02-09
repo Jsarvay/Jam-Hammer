@@ -9,14 +9,18 @@ import "./style.css";
 class User extends Component {
 
     state = {
-        user: []
+        user: [],
+        profilePicture: ""
     };
 
 
     componentDidMount() {
-        API.getUser(window.location.pathname)
+        let id = window.location.pathname.substring(6)
+        API.getUser(id)
         .then((res) => {
             this.setState({ user: res.data })
+            this.setState({ profilePicture: "https://jamhammer.s3.amazonaws.com/ProfilePictures/" + res.data.profilePicture + ".png"})
+            console.log(res)
         }
         )
         .catch(err => console.log(err));
@@ -28,7 +32,7 @@ class User extends Component {
         <Row>
             <Col size="md-4">
                 <Card className="background-card">
-                    <Card.Img variant="top" src={this.state.user.profilePicture} />
+                    <Card.Img variant="top" src={this.state.profilePicture} />
                     <Card.Body>
                     <Card.Title><h4>{this.state.user.username}</h4></Card.Title>
                     </Card.Body>
