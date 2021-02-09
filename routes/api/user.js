@@ -5,7 +5,11 @@ const userAuth = require("../../utils/userAuth");
 
 function getCurrentUser(req, res){
   userAuth.authUser(req).then((user)=>{
-    res.json(user);
+    userModel.findById(user._id).populate('songs').then((userwithSongs) => {
+      res.json(userwithSongs);
+    }).catch((err)=>{
+      res.json(err);
+    })
   }).catch((err)=>{
     res.json(err);
   })
