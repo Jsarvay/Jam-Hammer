@@ -10,6 +10,10 @@ function Song(props) {
     const [SongData, setSongData] = useState(props.song);
     const [isLiked, setIsLiked] = useState(false);
 
+    if(props.song._id != SongData._id){
+        setSongData(props.song);
+    }
+
     var checkLiked = function () {
         var jwt = localStorage.getItem('SavedToken');
         var firstPeriod = jwt.indexOf(".");
