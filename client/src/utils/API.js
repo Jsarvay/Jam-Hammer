@@ -6,7 +6,11 @@ export default {
   },
 
   updateSong: function (id) {
-    return axios.get('/api/song/' + id);
+    return axios({
+      method: 'put',
+      url: '/api/song/like/' + id,
+      headers: { Authorization: localStorage.getItem('SavedToken') },
+    });
   },
   // saveSongs: function (id) {
   //   return axios.get('/api/songs/' + id);
