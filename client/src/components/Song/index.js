@@ -8,7 +8,7 @@ import "./style.css";
 function Song(props) {
 
     
-    var jamLike = event => {
+    var jamLike = function(){
         API.updateSong(props.id).then((res) => {
             console.log(res)
         })
@@ -42,7 +42,7 @@ function Song(props) {
                     <Card.Text>
                         <p>Likes: {props.likes.length}</p>
                     </Card.Text>
-                    <button className="button-color" id={props.id} onClick={jamLike()}>Jam to this!</button>
+                    <button className="button-color" id={props.id} onClick={jamLike}>{props.id} Jam to this!</button>
                 </Card.Body>
             </Card>
             </Col>

@@ -57,7 +57,7 @@ class Searching extends Component {
           key={song.id}
           title={song.title}
           creator={song.creator.username}
-          id={song.creator._id}
+          id={song._id}
           audio={song.audio}
           genre={song.genre}
           instrument={song.instrument}
