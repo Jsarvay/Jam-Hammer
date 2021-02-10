@@ -27,35 +27,22 @@ function Footer() {
       <div class="footer-links">
         <div className="footer-link-wrapper">
           <div class="footer-link-items">
-            <h2>About Us</h2>
-            <Link to="/sign-up">How it works</Link>
-            <Link to="/">Testimonials</Link>
-            <Link to="/">Careers</Link>
-            <Link to="/">Investors</Link>
-            <Link to="/">Terms of Service</Link>
+            <h2>Sign Up</h2>
+            <Link to="/register">Sign up today!</Link>
           </div>
           <div class="footer-link-items">
-            <h2>Contact Us</h2>
-            <Link to="/">Contact</Link>
-            <Link to="/">Support</Link>
-            <Link to="/">Destinations</Link>
-            <Link to="/">Sponsorships</Link>
+            <h2>Record!</h2>
+            <Link to="/recording">Recording pages here!</Link>
           </div>
         </div>
         <div className="footer-link-wrapper">
           <div class="footer-link-items">
-            <h2>Videos</h2>
-            <Link to="/">Submit Video</Link>
-            <Link to="/">Ambassadors</Link>
-            <Link to="/">Agency</Link>
-            <Link to="/">Influencer</Link>
+            <h2>Search!</h2>
+            <Link to="/search">Search recordings!</Link>
           </div>
           <div class="footer-link-items">
-            <h2>Social Media</h2>
-            <Link to="/">Instagram</Link>
-            <Link to="/">Facebook</Link>
-            <Link to="/">Youtube</Link>
-            <Link to="/">Twitter</Link>
+            <h2>Profiles!</h2>
+            <Link to="/profiles">Search profiles here!</Link>
           </div>
         </div>
       </div>
