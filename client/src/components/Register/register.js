@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Col, Row, Container } from '../Grid';
 import { Card } from 'react-bootstrap';
 import API from "../../utils/API";
+import FadeIn from 'react-fade-in';
 import './style.css';
 
 class Register extends Component {
@@ -58,8 +59,12 @@ class Register extends Component {
 
   render() {
   return (
-    <form>
-      <h3>Sign Up</h3>
+    <FadeIn
+    transitionDuration={2000}>
+    <Container className="form-color">
+
+    <form className="form-color">
+      <h2>Sign Up</h2>
 
       <div className="form-group">
         <label>Name</label>
@@ -91,13 +96,16 @@ class Register extends Component {
         />
       </div>
 
-      <button type="submit" className="btn btn-primary btn-block" onClick={this.registerUser}>
+      <button type="submit" className="button-color" onClick={this.registerUser}>
         Sign Up
       </button>
       <p className="forgot-password text-right">
         Already registered <a href="/">sign in?</a>
       </p>
     </form>
+
+    </Container>
+    </FadeIn>
   );
 }}
 

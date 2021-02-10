@@ -1,0 +1,24 @@
+
+.card-border {
+    border: #045ded 10px solid;
+    border-image-source: linear-gradient(to bottom right,
+    #045ded,
+    #ff4df0,
+    #70ffdf,
+    #1d269b,
+    #9d4dff);
+    border-image-slice: 1;
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    border-radius: 0.25rem;}

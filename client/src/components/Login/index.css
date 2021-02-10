@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Fascinate', cursive;
+  font-family: 'Orbitron', sans-serif;
 }
 
 h2 {
-  font-family: 'Fascinate', cursive;
+  font-family: 'Orbitron', sans-serif;
 }
 
 button {
@@ -27,14 +29,18 @@ form {
   position: relative;
   margin: 20px;
   padding: 10px;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .form-color {
   background-image: linear-gradient(
     to bottom right,
     #045ded,
-    #ff4df0,
-    #70ffdf,
+    black,
+    black,
     #1d269b,
-    #9d4dff)
+    black);
+box-shadow: hotpink 5px 5px 5px;
+color: hotpink;
+border: #045ded 5px solid;
 }
