@@ -67,9 +67,10 @@ function uploadFile(req, res) {
 
 function addLike(req, res){
   authUtil.authUser(req).then((user)=>{
-    songDb.findByIdAndUpdate(req.params.id, {$push: { likes: user._id}}).then((doc)=>{
-      console.log(doc);
-      res.json(doc);
+    songDb.findByIdAndUpdate(req.params.id, { $addToSet: { likes: user._id}}).populate('creator').then((doc)=>{
+      songDb.findById(req.params.id).then((docToSend)=>{
+        res.json(docToSend);
+      });
     });
   });
 }

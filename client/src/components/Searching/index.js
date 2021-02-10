@@ -62,16 +62,7 @@ class Searching extends Component {
 
         {this.state.filter.map(song => (
           <Song 
-          key={song.id}
-          title={song.title}
-          creator={song.creator.username}
-          id={song._id}
-          audio={song.audio}
-          genre={song.genre}
-          instrument={song.instrument}
-          description={song.description}
-          download={song.download}
-          likes={song.likes}
+          song={song}
           />
         ))}
         </Container>
