@@ -30,7 +30,7 @@ class Searching extends Component {
 
     handleSearch = event => {
         event.preventDefault();
-        const filtered = this.state.songs.filter(song => song.title.includes(this.state.search)
+        var filtered = this.state.songs.filter(song => song.title.includes(this.state.search)
         || song.creator.username.includes(this.state.search)
         || song.genre.includes(this.state.search)
         || song.instrument.includes(this.state.search));

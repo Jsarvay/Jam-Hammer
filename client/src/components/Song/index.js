@@ -6,8 +6,13 @@ import API from "../../utils/API";
 import "./style.css";
 
 function Song(props) {
+    console.log(props.song.title);
     const [SongData, setSongData] = useState(props.song);
     const [isLiked, setIsLiked] = useState(false);
+
+    if(props.song._id != SongData._id){
+        setSongData(props.song);
+    }
 
     var checkLiked = function () {
         var jwt = localStorage.getItem('SavedToken');
