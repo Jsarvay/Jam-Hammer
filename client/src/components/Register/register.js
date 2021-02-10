@@ -13,6 +13,14 @@ class Register extends Component {
     password: ""
   }
 
+  componentDidMount() {
+    API.getCurrentUser().then((res) => {
+      if(typeof res.data == "object") {
+        window.location.assign("/user");
+      }
+    })
+  };
+
   handleNameChange = event => {
     this.setState({realName: event.target.value})
   };
@@ -40,10 +48,10 @@ class Register extends Component {
         console.log(token);
         localStorage.setItem("SavedToken", 'Bearer ' + token);
         console.log(localStorage.getItem("SavedToken"));
-        //this.$router.push({name:'HomePage'});
+        window.location.assign('/user');
       }
       else {
-        console.log(response.data.reason)
+        alert("Please enter valid credentials")
       }
       })
   };

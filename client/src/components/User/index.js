@@ -17,6 +17,11 @@ class User extends Component {
 
 
     componentDidMount() {
+        API.getCurrentUser().then((res) => {
+            if(typeof res.data != "object") {
+              window.location.assign("/");
+            }
+          })
         let id = window.location.pathname.substring(6)
         if(id == ""){
             API.getCurrentUser().then((res) => {
