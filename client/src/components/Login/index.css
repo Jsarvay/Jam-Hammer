@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Fascinate', cursive;
+  font-family: "Fascinate", cursive;
 }
 
 h2 {
-  font-family: 'Fascinate', cursive;
+  font-family: "Fascinate", cursive;
 }
 
 button {
@@ -20,7 +20,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: aqua;
+  background-color: black;
 }
 form {
   display: block;
@@ -36,5 +36,6 @@ form {
     #ff4df0,
     #70ffdf,
     #1d269b,
-    #9d4dff)
+    white#9d4dff border-box: 2px;
+  );
 }
