@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Component } from 'react';
 import { Col, Row, Container } from '../Grid';
 import axios from "axios";
+import API from "../../utils/API";
 import Jumbotron from '../Jumbotron';
 import {Modal} from "react-bootstrap";
 import "./style.css";
@@ -62,6 +63,11 @@ class RecordComp extends Component {
     };
 
     componentDidMount() {
+        API.getCurrentUser().then((res) => {
+            if(typeof res.data != "object") {
+              window.location.assign("/");
+            }
+          })
         // instantiate Video.js
         this.player = videojs(this.videoNode, this.props, () => {
             // print version information at startup
@@ -119,7 +125,7 @@ class RecordComp extends Component {
         }).then(function (data) {
             console.log(data);
         });
-    }
+    };
 
     render() {
 

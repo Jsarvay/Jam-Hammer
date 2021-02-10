@@ -14,6 +14,11 @@ class Searching extends Component {
       };
 
     componentDidMount() {
+        API.getCurrentUser().then((res) => {
+              if(typeof res.data != "object") {
+                window.location.assign("/");
+              }
+            })
         API.getSongs()
         .then((res) => {
             this.setState({ songs: res.data, filter: res.data })

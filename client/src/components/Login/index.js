@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from '../Grid';
+import {Redirect} from "react-router-dom";
 import API from "../../utils/API";
 import "./index.css";
 
@@ -8,6 +9,14 @@ class LoginForm extends Component {
   state = {
     username: "",
     password: ""
+  };
+
+  componentDidMount() {
+    API.getCurrentUser().then((res) => {
+      if(typeof res.data == "object") {
+        window.location.assign("/user");
+      }
+    })
   };
 
   handleUserChange = event => {
@@ -29,10 +38,10 @@ class LoginForm extends Component {
         console.log(token);
         localStorage.setItem("SavedToken", 'Bearer ' + token);
         console.log(localStorage.getItem("SavedToken"));
-        //this.$router.push({name:'HomePage'});
+        window.location.assign('/user');
       }
       else {
-        console.log(response.data.reason)
+        alert(response.data.reason)
       }
       })
   };
