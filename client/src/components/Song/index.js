@@ -19,7 +19,7 @@ function Song(props) {
         if (SongData.likes.includes(userData.userId)) {
             console.log("Song: " + SongData.title);
             return ("Already Jamming")
-        }else{
+        } else {
             return ("Jam to this")
         }
 
@@ -31,9 +31,11 @@ function Song(props) {
         })
     };
 
+    var link = "";
 
-    let link = "/user/" + SongData.creator._id;
-
+    if (props.isUser == "false") {
+        link = "/user/" + SongData.creator._id;
+    }
     return (
         <Row>
             <Col size="md-12">
@@ -44,9 +46,11 @@ function Song(props) {
                             controls
                         />
                         <Card.Title><p>{SongData.title}</p></Card.Title>
-                        <Card.Text>
-                            <p>Creator: <a href={link}>{SongData.creator.username}</a></p>
-                        </Card.Text>
+                        {props.isUser == "false" &&
+                            <Card.Text>
+                                <p>Creator: <a href={link}>{SongData.creator.username}</a></p>
+                            </Card.Text>
+                        }
                         <Card.Text>
                             <p>Instrument: {SongData.instrument}</p>
                         </Card.Text>

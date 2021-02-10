@@ -3,6 +3,7 @@ import { Col, Row, Container } from '../Grid';
 import {Card} from "react-bootstrap";
 import Song from "../Song/index";
 import API from "../../utils/API";
+import FadeIn from 'react-fade-in';
 import "./style.css";
 
 class Searching extends Component {
@@ -43,6 +44,8 @@ class Searching extends Component {
 
     render(){
     return (
+      <FadeIn
+      transitionDuration={2000}>
         <Container fluid>
         <div className="form-group">
             <form className="search">
@@ -60,9 +63,11 @@ class Searching extends Component {
         {this.state.filter.map(song => (
           <Song 
           song={song}
+          isUser="false"
           />
         ))}
         </Container>
+        </FadeIn>
     )}
 }
 

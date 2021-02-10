@@ -4,6 +4,7 @@ import axios from "axios";
 import API from "../../utils/API";
 import Jumbotron from '../Jumbotron';
 import {Modal} from "react-bootstrap";
+import FadeIn from 'react-fade-in';
 import "./style.css";
 
 import 'video.js/dist/video-js.css';
@@ -124,12 +125,15 @@ class RecordComp extends Component {
             contentType: false
         }).then(function (data) {
             console.log(data);
+            window.location.assign('/user');
         });
     };
 
     render() {
 
         return (
+            <FadeIn
+            transitionDuration={2000}>
             <Container fluid>
                 <Row>
                     <Col size="md-12">
@@ -182,6 +186,7 @@ class RecordComp extends Component {
                     </Col>
                 </Row>
             </Container>
+            </FadeIn>
         );
     };
 };

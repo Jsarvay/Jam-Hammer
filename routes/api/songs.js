@@ -68,7 +68,7 @@ function uploadFile(req, res) {
 function addLike(req, res){
   authUtil.authUser(req).then((user)=>{
     songDb.findByIdAndUpdate(req.params.id, { $addToSet: { likes: user._id}}).populate('creator').then((doc)=>{
-      songDb.findById(req.params.id).then((docToSend)=>{
+      songDb.findById(req.params.id).populate('creator').then((docToSend)=>{
         res.json(docToSend);
       });
     });

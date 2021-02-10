@@ -1,11 +1,19 @@
 .footer-container {
-  background-color: #242424;
+  background-color: black;
   padding: 4rem 0 2rem 0;
   display: flex;
   margin-top: 500px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 10px solid;
+  border-image-source: linear-gradient(to bottom right,
+  #045ded,
+  #ff4df0,
+  #70ffdf,
+  #1d269b,
+  #9d4dff);
+  border-image-slice: 1;
 }
 
 .footer-subscription {
