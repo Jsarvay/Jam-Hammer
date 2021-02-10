@@ -11,7 +11,7 @@ import "./style.css";
 class User extends Component {
 
     state = {
-        user: [],
+        user: {},
         profilePicture: "",
         songs: []
     };
@@ -31,9 +31,11 @@ class User extends Component {
                 this.setState({songs: this.state.user.songs})
             });
         }else{
+            console.log(id);
             API.getUser(id).then((res) => {
                 this.setState({ user: res.data })
                 this.setState({ profilePicture: "https://jamhammer.s3.amazonaws.com/ProfilePictures/" + res.data.profilePicture + ".png" })
+                this.setState({songs: this.state.user.songs})
             });
         }
       };
@@ -57,16 +59,8 @@ class User extends Component {
                 <Jumbotron>
                 {this.state.songs.map(song => (
                 <Song 
-                key={song.id}
-                title={song.title}
-                creator={this.state.user.username}
-                id={this.state.user.id}
-                audio={song.audio}
-                genre={song.genre}
-                instrument={song.instrument}
-                description={song.description}
-                download={song.download}
-                likes={song.likes}
+                song={song}
+                isUser="true"
                 />
                 ))}
                 </Jumbotron>

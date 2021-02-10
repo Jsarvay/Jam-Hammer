@@ -63,6 +63,7 @@ class Searching extends Component {
         {this.state.filter.map(song => (
           <Song 
           song={song}
+          isUser="false"
           />
         ))}
         </Container>
