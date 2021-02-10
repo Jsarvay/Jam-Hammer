@@ -3,6 +3,11 @@ import { Navbar, Nav } from 'react-bootstrap';
 import './style.css';
 
 function Navigate() {
+
+  function logout() {
+    localStorage.clear();
+  };
+
   return (
     <Navbar className="nav-bg" collapseOnSelect expand="lg" variant="dark">
       <Navbar.Brand className="title" href="/">
@@ -18,14 +23,14 @@ function Navigate() {
           <Nav.Link className="nav-links" href="/recording">
             <h3>Record</h3>
           </Nav.Link>
-          <Nav.Link className="nav-links" href="/upload">
-            <h3>Upload</h3>
-          </Nav.Link>
           <Nav.Link className="nav-links" href="/search">
             <h3>Search</h3>
           </Nav.Link>
           <Nav.Link className="nav-links" href="/user">
             <h3>Profile</h3>
+          </Nav.Link>
+          <Nav.Link className="nav-links" href="/" onClick={logout}>
+            <h3>Logout</h3>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

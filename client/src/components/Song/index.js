@@ -6,7 +6,6 @@ import API from "../../utils/API";
 import "./style.css";
 
 function Song(props) {
-
     const [SongData, setSongData] = useState(props.song);
     const [isLiked, setIsLiked] = useState(false);
 
