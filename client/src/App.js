@@ -23,9 +23,6 @@ function App() {
           <Route exact path="/register">
             <Register />
           </Route>
-          <Route exact path="/upload">
-            <Uploading />
-          </Route>
           <Route exact path="/recording">
             <Recording />
           </Route>
