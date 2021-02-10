@@ -20,7 +20,7 @@ function Song(props) {
     return (
         <Row>
             <Col size="md-12">
-            <Card className="background-card">
+            <div className="background-card card-border">
                 <Card.Body>
                     <ReactAudioPlayer
                     src={props.audio}
@@ -40,11 +40,11 @@ function Song(props) {
                         <p>Description: {props.description}</p>
                     </Card.Text>
                     <Card.Text>
-                        <p>Likes: {props.likes.length}</p>
+                        <p>Jammed to: {props.likes.length}</p>
                     </Card.Text>
                     <button className="button-color" id={props.id} onClick={jamLike}>Jam to this!</button>
                 </Card.Body>
-            </Card>
+            </div>
             </Col>
         </Row>
     )

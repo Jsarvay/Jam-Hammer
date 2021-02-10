@@ -1,6 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
 .background-card {
+    background-image: linear-gradient(
+        to bottom right,
+        #045ded,
+        black,
+        black,
+        #1d269b,
+        black);
+    padding: 20px;
+    margin: 20px;
+    box-shadow: hotpink 5px 5px 5px;
+    color: hotpink;
+    border: #045ded 5px solid;
+}
+
+.user-card {
     background-image: linear-gradient(
         to bottom right,
         #045ded,
@@ -13,13 +28,18 @@
     box-shadow: black 5px 5px 5px;
 }
 
+
 .button-color {
     background-color: black;
     color: hotpink;
     padding: 5px;
-    box-shadow: black 2px 2px 2px;
-    font-family: 'Fascinate', cursive;
-    border: black solid 2px;
+    box-shadow: hotpink 2px 2px 2px;
+    font-family: 'Orbitron', sans-serif;
+    border: #045ded solid 2px;
+}
+
+a {
+    color: #045ded;
 }
 
 .button-color:hover {
@@ -27,9 +47,16 @@
 }
 
 h4 {
-    font-family: 'Fascinate', cursive;
+    font-family: 'Orbitron', sans-serif;;
 }
 
 p {
-    font-family: 'Fascinate', cursive;
+    font-family: 'Orbitron', sans-serif;;
+}
+
+@media (max-width: 600px) {
+    .card {
+        margin: 0%;
+        margin-top: 20px;
+    }
 }

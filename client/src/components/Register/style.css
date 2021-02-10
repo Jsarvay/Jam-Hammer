@@ -1,7 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+.background-card {
+  background-image: linear-gradient(
+      to bottom right,
+      #045ded,
+      black,
+      black,
+      #1d269b,
+      black);
+  padding: 20px;
+  margin: 20px;
+  box-shadow: hotpink 5px 5px 5px;
+  color: hotpink;
+  border: #045ded 5px solid;
+}
+
+h2 {
+  font-family: 'Orbitron', sans-serif;
+}
+
 .search {
   align-content: center;
   text-align: center;
   margin-left: 25%;
   margin-right: 25%;
   padding: 20px;
+}
+
+form {
+  display: block;
+  position: relative;
+  margin: 20px;
+  padding: 10px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.form-color {
+  background-image: linear-gradient(
+    to bottom right,
+    #045ded,
+    black,
+    black,
+    #1d269b,
+    black);
+box-shadow: hotpink 5px 5px 5px;
+color: hotpink;
+border: #045ded 5px solid;
 }

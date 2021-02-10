@@ -35,6 +35,7 @@
     "passport-local-mongoose": "^6.1.0",
     "react-audio-player": "^0.14.0",
     "react-bootstrap": "^1.4.3",
+    "react-fade-in": "^2.0.1",
     "uuid": "^8.3.2"
   }
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from '../Grid';
 import {Redirect} from "react-router-dom";
 import API from "../../utils/API";
+import FadeIn from 'react-fade-in';
 import "./index.css";
 
 class LoginForm extends Component {
@@ -48,6 +49,8 @@ class LoginForm extends Component {
 
   render() {
   return (
+    <FadeIn
+    transitionDuration={2000}>
     <Container className="form-color">
     <form className="form-color">
       <div className="form-inner">
@@ -64,6 +67,7 @@ class LoginForm extends Component {
       <input className="button-color" type="submit" value="LOGIN" onClick={this.loginUser} />
     </form>
     </Container>
+    </FadeIn>
   );
 }};
 

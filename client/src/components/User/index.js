@@ -5,6 +5,7 @@ import Jumbotron from '../Jumbotron';
 import {Card} from "react-bootstrap";
 import API from "../../utils/API";
 import Song from "../Song/index";
+import FadeIn from 'react-fade-in';
 import "./style.css";
 
 class User extends Component {
@@ -39,6 +40,8 @@ class User extends Component {
 
     render() {
     return (
+        <FadeIn
+        transitionDuration={2000}>
         <Container fluid>
         <Row>
             <Col size="md-4">
@@ -70,6 +73,7 @@ class User extends Component {
             </Col>
         </Row>
     </Container>
+    </FadeIn>
     )
 }};
 
