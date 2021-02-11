@@ -38,17 +38,17 @@ Please feel free to reach out to either of the following links with questions re
 ##### Github: [JSarvay](http://github.com/JSarvay/)
 ##### E-mail: jordans1@vt.edu
 
-![login](./public/Assets/login.png)
+![login](./client/public/Assets/login.png)
 Login page.
 
-![signup](./public/Assets/signup.png)
+![signup](./client/public/Assets/signup.png)
 Lets users register an account for the app.
 
-![user](./public/Assets/user.png)
+![user](./client/public/Assets/user.png)
 User page.
 
-![record](./public/Assets/record.png)
+![record](./client/public/Assets/record.png)
 Recording page.
 
-![search](./public/Assets/search.png)
+![search](./client/public/Assets/search.png)
 Search page.
