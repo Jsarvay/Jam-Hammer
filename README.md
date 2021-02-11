@@ -1,4 +1,4 @@
-# React Employee Directory
+# JamHammer
 ### Created by Jordan Sarvay, Alex Syrovatka, Drew McGhie, Baxter Cox
 
 ## Description
