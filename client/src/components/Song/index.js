@@ -48,6 +48,9 @@ function Song(props) {
                         <ReactAudioPlayer
                             src={SongData.audio}
                             controls
+                            style= {
+                                {width: "100%"}
+                            }
                         />
                         <Card.Title><p>{SongData.title}</p></Card.Title>
                         {props.isUser == "false" &&
