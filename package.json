@@ -36,6 +36,7 @@
     "react-audio-player": "^0.14.0",
     "react-bootstrap": "^1.4.3",
     "react-fade-in": "^2.0.1",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "jimp": "^0.16.1"
   }
 }
