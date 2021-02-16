@@ -6,6 +6,7 @@ import {Card, Modal} from "react-bootstrap";
 import API from "../../utils/API";
 import Song from "../Song/index";
 import FadeIn from 'react-fade-in';
+import axios from "axios";
 import "./style.css";
 
 class User extends Component {
@@ -16,7 +17,8 @@ class User extends Component {
         songs: [],
         state: false,
         picture: false,
-        src: false
+        src: false,
+        isUser: false
     };
 
     setShow = event => {
@@ -65,6 +67,7 @@ class User extends Component {
                 this.setState({ user: res.data })
                 this.setState({ profilePicture: "https://jamhammer.s3.amazonaws.com/ProfilePictures/" + res.data.profilePicture + ".png" })
                 this.setState({songs: this.state.user.songs})
+                this.setState({isUser: true});
             });
         }else{
             console.log(id);
@@ -85,7 +88,9 @@ class User extends Component {
             <Col size="md-4">
                 <Card className="background-card">
                     <Card.Img variant="top" src={this.state.profilePicture} />
+                    {this.state.isUser==true &&
                     <button className="button-color" onClick={this.setShow}>Upload Picture</button>
+                    }
                     <Card.Body>
                     <Card.Title><h4>{this.state.user.username}</h4></Card.Title>
                     </Card.Body>
