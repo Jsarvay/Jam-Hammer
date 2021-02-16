@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {useParams} from "react-router-dom";
 import { Col, Row, Container } from '../Grid';
 import Jumbotron from '../Jumbotron';
-import {Card} from "react-bootstrap";
+import {Card, Modal} from "react-bootstrap";
 import API from "../../utils/API";
 import Song from "../Song/index";
 import FadeIn from 'react-fade-in';
@@ -13,9 +13,45 @@ class User extends Component {
     state = {
         user: {},
         profilePicture: "",
-        songs: []
+        songs: [],
+        state: false,
+        picture: false,
+        src: false
     };
 
+    setShow = event => {
+        this.setState({show: true});
+    };
+
+    setClose = event => {
+        this.setState({show: false});
+    };
+
+    pictureChange = event => {
+        let upload = event.target.files[0];
+        let src = URL.createObjectURL(upload);
+
+        this.setState({
+            picture: upload,
+            src: src
+        })
+    }
+
+    Upload = (ev) => {
+        var fd = new FormData();
+        fd.append('picture', this.state.picture);
+        axios({
+            method: 'post',
+            url: '/api/users/profile',
+            data: fd,
+            headers: {Authorization: localStorage.getItem('SavedToken')},
+            processData: false,
+            contentType: false
+        }).then(function (data) {
+            console.log(data);
+            window.location.assign('/user');
+        });
+    };
 
     componentDidMount() {
         API.getCurrentUser().then((res) => {
@@ -49,6 +85,7 @@ class User extends Component {
             <Col size="md-4">
                 <Card className="background-card">
                     <Card.Img variant="top" src={this.state.profilePicture} />
+                    <button className="button-color" onClick={this.setShow}>Upload Picture</button>
                     <Card.Body>
                     <Card.Title><h4>{this.state.user.username}</h4></Card.Title>
                     </Card.Body>
@@ -66,6 +103,16 @@ class User extends Component {
                 </Jumbotron>
             </Col>
         </Row>
+        <Modal show={this.state.show} onHide={this.setClose}>
+            <Modal.Body className="recording-background">
+                <form>
+                    <input type="file" accept="image/*" multiple="false" onChange={this.pictureChange}></input>
+                </form>
+            </Modal.Body>
+            <Modal.Footer className="recording-background">
+                <button className="button-color button-width" onClick={this.Upload}>Upload</button>
+            </Modal.Footer>
+        </Modal>
     </Container>
     </FadeIn>
     )
